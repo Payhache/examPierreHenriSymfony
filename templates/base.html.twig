@@ -3,10 +3,17 @@
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('stylesheets/bootstrap.css') }}">
+        <link rel="stylesheet" href="{{ asset('stylesheets/style.css') }}">
+        <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
+        {% endblock %}
     </head>
     <body>
+        {# {% include '' %} #}
         {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+        {% block javascripts %}
+         <script src="{{ asset('javascript/bootstrap.js') }}"></script>
+        {% endblock %}
     </body>
 </html>
