@@ -10,7 +10,7 @@
         {% endblock %}
     </head>
     <body>
-        {# {% include '' %} #}
+        {% include '/parts/header.html.twig' %}
         {% block body %}{% endblock %}
         {% block javascripts %}
          <script src="{{ asset('javascript/bootstrap.js') }}"></script>
