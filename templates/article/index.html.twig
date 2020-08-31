@@ -1,12 +1,13 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Article index{% endblock %}
+{% block title %}Tous nos articles{% endblock %}
 
 {% block body %}
-    <h1>Article index</h1>
-<div class="w-75 row mx-auto">
+    <h1 class="text-center mt-5">Tous nos derniers articles</h1>
+
+<div class="mt-5 w-75 row mx-auto">
     {% for article in articles %}   
-        <div class="card col-md6" style="width: 18rem;">
+        <div class="card col-md6 mx-auto" style="width: 18rem;">
             <img class="card-img-top" src="{{asset('img/' ~ article.picture)}}" alt="Card image cap">
             <div class="card-body">
                 <h5 class="card-title">{{ article.title }}</h5>
@@ -16,5 +17,11 @@
         </div>
     {% endfor %}
 </div>
-    <a href="{{ path('article_new') }}">Create new</a>
+            {% if app.user %}
+    <div class="m-5 text-right">
+    <a class="btn btn-info" href="{{ path('article_new') }}">Creer un nouvel article</a>
+    </div>
+    {% endif %}
+
+
 {% endblock %}

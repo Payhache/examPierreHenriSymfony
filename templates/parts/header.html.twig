@@ -2,14 +2,15 @@
 
   
 <header>
-<nav class="navbar navbar-dark bg-dark">
+<nav class="navbar navbar-dark bg-dark shadow opacity-4">
   <a class="navbar-brand" href="#">La Gazette HB</a>
     <ul class="navbar-nav">
       <li class="nav-item active">
-        <a class="nav-link" href="{{ path('article_index') }}"> Voir tous les articles <span class="sr-only">(current)</span></a>
+        <a class="btn btn-warning" href="{{ path('article_index') }}"> Voir tous les articles <span class="sr-only">(current)</span></a>
       </li>
     </ul>
   {% if app.user %}
+  <a class="btn btn-warning"href="{{path('app_logout')}}">Me déconnecter</a>
   <p class="welcome_message"> Bonjour {{ app.user.username}}</p> 
   {% else %}  
   <a href="{{path('app_login')}}">se connecter</a>  
