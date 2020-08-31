@@ -11,12 +11,11 @@ class LoginControllerTest extends WebTestCase
     {
         $client = static::createClient();
         $userRepository = static::$container->get(UserRepository::class);
-
         // retrieve the test user
-        $testUser = $userRepository->findUserByName('Pierre');
-
+        $testUser = $userRepository->findOneBy(['username' => 'Pierre']);
         // simulate $testUser being logged in
         $client->loginUser($testUser);
-
+        $client->request('GET', '/article/new');
+        $this->assertResponseIsSuccessful();
     }
 }
