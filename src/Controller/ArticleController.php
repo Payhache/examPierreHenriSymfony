@@ -73,7 +73,7 @@ class ArticleController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/edit", name="article_edit", methods={"GET","POST"})
+     * @Route("/edit/{id}", name="article_edit", methods={"GET","POST"})
      */
     public function edit(Request $request, Article $article, String $photoDir, SluggerInterface $slugger): Response
     {
@@ -104,7 +104,7 @@ class ArticleController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="article_delete", methods={"DELETE"})
+     * @Route("/delete/{id}", name="article_delete", methods={"DELETE"})
      */
     public function delete(Request $request, Article $article): Response
     {
